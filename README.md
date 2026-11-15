@@ -1,6 +1,10 @@
-# The Mirror That Ate the Hotel: Hotel Aurelian companion app
+# Hotel Aurelian: The Night Shift
 
-The companion web app for Tammy Michelli's novel *The Mirror That Ate the Hotel*. Explore the 1904 Hotel Aurelian, sign the guest register, take the Mirror Quiz, and play In the Book, in the Jar. Paperback and hardcover readers unlock every room free.
+A browser game from Tammy Michelli's novel *The Mirror That Ate the Hotel*. You are Agnes Szabo, night auditor of the 1904 Hotel Aurelian on Lake Superior. The lobby mirror belches at 2:51, give or take a minute, and tonight it is eating rooms. Explore the hotel, collect what you need, balance the books, and keep every room in the ledger, in ink.
 
-Open the app: https://smiles2322-cmd.github.io/mirror-hotel/
+Night One is free. Paperback and hardcover readers unlock Nights Two and Three with a word from their copy. Works on phones and computers, saves your progress on your device, and plays offline after the first visit.
+
+Play: https://smiles2322-cmd.github.io/mirror-hotel/
 Get the book: https://a.co/d/0atLWG3R
+
+The site is published from `site.tgz.b64` (split into numbered parts when large) by the Publish site workflow.
