@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotel Aurelian: The Night Shift. A game from The Mirror That Ate the Hotel</title>
+<meta name="description" content="Play Agnes Szabo, night auditor of the 1904 Hotel Aurelian, through three night shifts while the lobby mirror eats the rooms. A game from Tammy Michelli's novel The Mirror That Ate the Hotel. Night One is free.">
+<meta name="theme-color" content="#1a0b0c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hotel Aurelian">
+<meta property="og:title" content="Hotel Aurelian: The Night Shift">
+<meta property="og:description" content="The mirror in the lobby belches at 2:51. Tonight it is eating rooms. Can you keep them in the book?">
+<meta property="og:image" content="img/bg/lobby.jpg">
+<link rel="preload" href="fonts/ebg.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="ripple" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="3" result="t"><animate attributeName="baseFrequency" dur="14s" values="0.012 0.03;0.016 0.036;0.012 0.03" repeatCount="indefinite"/></feTurbulence><feDisplacementMap id="rippleDisp" in="SourceGraphic" in2="t" scale="4" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+
+<main id="title" class="title-screen">
+  <div class="title-bg" aria-hidden="true"><div class="tglass"></div></div>
+  <div class="title-inner">
+    <p class="kicker">The Mirror That Ate the Hotel</p>
+    <h1 class="title-h">Hotel Aurelian</h1>
+    <p class="sub">The Night Shift</p>
+    <p class="blurb">You are Agnes Szabo, night auditor of a 1904 hotel on Lake Superior. The lobby mirror belches at 2:51, give or take a minute. Tonight it is eating rooms. Keep them in the book.</p>
+    <div id="titleMenu"></div>
+    <p class="credit">A game from the novel by Tammy Michelli. Night One is free. Sound on for the full belch.</p>
+  </div>
+</main>
+
+<div id="game" class="game" hidden>
+  <header class="hud">
+    <div class="hud-l"><p class="clock" id="clock" aria-live="off">1:40 AM</p><p class="nightname" id="nightName"></p></div>
+    <div class="appetite" id="appMeter" role="img" aria-label="Mirror appetite"><span class="app-ico" aria-hidden="true">🪞</span><span class="bar" id="appetite"><span></span></span><span class="applabel" id="appLabel"></span></div>
+    <p class="scorepill" id="scorePill"><span class="sr-only">Score </span><b id="scoreVal">0</b></p>
+    <div class="hud-r">
+      <button type="button" class="iconbtn" id="btnNotes" aria-label="Steno pad: goals and notes"><span aria-hidden="true">📝</span></button>
+      <button type="button" class="iconbtn" id="btnMap" aria-label="Hotel map"><span aria-hidden="true">🗺️</span></button>
+      <button type="button" class="iconbtn" id="btnWait" aria-label="Wait ten minutes"><span aria-hidden="true">⏳</span></button>
+      <button type="button" class="iconbtn" id="soundBtn" aria-pressed="true" aria-label="Sound on. Turn off">🔊</button>
+      <button type="button" class="iconbtn" id="btnMenu" aria-label="Menu"><span aria-hidden="true">☰</span></button>
+    </div>
+  </header>
+  <p class="objective" id="objective" role="region" aria-label="Current goal"></p>
+  <div class="viewport" id="viewport" role="region" aria-label="The scene: tap the glowing spots">
+    <div class="stage" id="stage" role="group" aria-label="Scene"></div>
+  </div>
+  <p class="panhint" id="panHint" hidden aria-hidden="true">Swipe the picture to look around</p>
+  <section class="lower" aria-label="Story and actions">
+    <div class="narr" id="narr"><p></p></div>
+    <div class="scenebar"><p class="scn"><span id="sceneName"></span> <span class="floor" id="sceneFloor"></span></p><button type="button" class="btn small" id="btnLook">Show clues</button></div>
+    <nav class="exits" id="exits" aria-label="Walk to"></nav>
+    <div class="tray-wrap"><h2 class="tray-h">Pockets</h2><div class="tray" id="tray"></div></div>
+  </section>
+</div>
+
+<div id="dialog" class="dialog" hidden role="dialog" aria-modal="false" aria-label="Story"></div>
+<div id="toasts" class="toasts" aria-hidden="true"></div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<div id="live2" class="sr-only" aria-live="assertive"></div>
+
+<script src="js/config.js"></script>
+<script src="js/codes.js"></script>
+<script src="js/sha256.js"></script>
+<script src="js/unlock.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/arcade.js"></script>
+<script src="js/games.js"></script>
+<script src="js/story.js"></script>
+<script src="js/night1.js"></script>
+<script src="js/night2.js"></script>
+<script src="js/night3.js"></script>
+<script src="js/unlockui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
